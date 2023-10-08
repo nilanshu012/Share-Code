@@ -5,7 +5,9 @@ import "dotenv/config";
 const app= express();
 const port = process.env.PORT || 3000;
 // const localurl = 'mongodb://127.0.0.1:27017/code'; 
+
 const uri= process.env.uri;
+
 mongoose.connect(uri);
 
 
