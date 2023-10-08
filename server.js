@@ -23,8 +23,16 @@ const Data = mongoose.model('Data',dataSchema);
 
 
 app.get('/',(req,res)=>{
-    let data=`    kgfalk
-     gaSG `;
+    let data=`   Welcome!
+   
+   Click on New to start writing a new text.
+   When you are done click on Save to save it.
+   
+   Once saved you can share the link to view the text anytime.
+   The highlighing will appear once the code is saved.
+   
+   
+   Created ty neo.`;
     res.render('index.ejs',{code:data,language:'plaintext'});
 })
 
