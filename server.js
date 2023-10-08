@@ -7,8 +7,18 @@ const port = process.env.PORT || 3000;
 // const localurl = 'mongodb://127.0.0.1:27017/code'; 
 
 const uri= process.env.uri;
+mongoose.set('strictQuery',false);
 
-mongoose.connect(uri);
+const connectDB = async()=>{
+    try{
+        const conn = mongoose.connect(uri);
+    }catch(error)
+    {
+        console.log(error);
+        process.exit(1);
+    }
+}
+
 
 
 app.use(express.static("public"));
@@ -68,6 +78,8 @@ app.get('/:id',async (req,res)=>{
 
 })
 
-app.listen(port,()=>{
+
+connectDB().then(()=>
+    app.listen(port,()=>{
     console.log(`Server running on ${port}`);
-})
+}));
