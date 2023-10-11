@@ -131,11 +131,13 @@ select,input{
     width: 70px;
     height: 2rem;
     margin: auto;
+    border: 1px solid rgb(51, 45, 37);
     
 }
 
 .dark .save{
     backdrop-filter: brightness(300%);
+    border: 1px solid rgb(200, 184, 163);
     /* background-color: #3cbc66; */
     /* color: #ffffff; */
 }
@@ -145,10 +147,12 @@ select,input{
     background : transparent;
     backdrop-filter: brightness(85%);
     margin: auto;
+    border: 1px solid rgb(51, 45, 37);
 }
 
 .dark .new{
     backdrop-filter: brightness(300%);
+    border: 1px solid rgb(200, 184, 163);
     /* background-color: #c0ab13; */
     /* color: #fff; */
 
