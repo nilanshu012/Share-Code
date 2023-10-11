@@ -9,16 +9,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@700&family=Pacifico&family=Poppins&family=Roboto+Mono&display=swap" rel="stylesheet">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" integrity="sha512-rdhY3cbXURo13l/WU9VlaRyaIYeJ/KBakckXIvJNAQde8DgpOmE+eZf7ha4vdqVjTtwQt69bD2wH2LXob/LB7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css" integrity="sha512-RLF8eOxhuwsRINc7r56dpl9a3VStqrXD+udWahutJrYdyh++2Ghnf+s4jFsOyryKZt/GNjPwbXVPH3MJpKrn2g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <link rel="stylesheet" href="highlight/styles/monokai-sublime.min.css">
-    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href=<%=`highlight/styles/${locals.theme}.min.css`%>>
     <link rel="stylesheet" href="/styles/main.css">
+    <script>hljs.highlightAll();</script>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>share code</title>
 </head>
-<body>
+
+<body class="<%=`hljs ${locals.themeStyle}`%>">
+
+    <a href="/" class="logo">Share Code</a>
     <%- include('buttons.ejs',{savestatus:'disabled'}) %>
+    <form  method="POST">
+        <div>
+            <label for="themeSelect"  >Choose a theme:</label>
+        <select name="themeSelect" class="hljs themebtn">
+            <option value="atom-one-light light" >Atom One Light</option>
+            <option value="github light">GitHub Light</option>
+            <option value="tokyo-night-light light">Tokyo Night Light</option>
+            <option value="night-owl dark">Night Owl</option>
+            <option value="github-dark dark">GitHub Dark</option>
+            <option value="monokai dark">Monokai</option>
+            <option value="shades-of-purple dark">Shades of Purple</option>
+
+        </select>
+        <input type="hidden" name="id" value="<%= id %>" />
+        <input type="submit" value="Submit" formaction="/theme" class="hljs themebtn">
+        </div>
+    </div>
+    </form>
     <div class="wrapper">
-        <div class="line-nos">
+        <div class="line-nos hljs-comment">
             <% for(let i=0;i<code.split('\n').length;i++){ %>
                 <div><%=i+1%></div>
             <% } %>

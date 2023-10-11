@@ -1,8 +1,5 @@
 body{
-    background-color: #23241F;
-    margin:0;
-
-    
+    margin:0;   
 }
 
 pre{
@@ -32,48 +29,78 @@ code{
     
 }
 
+label,select,input{
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    padding: 0.15rem 0.5rem;
+    
+    
+}
+
+select,input{   
+    border: 1px solid rgb(51, 45, 37);  
+    border-radius: 0.5rem;
+    
+}
+
+
+
+.dark select,.dark input{   
+    border: 1px solid rgb(200, 184, 163);  
+    border-radius: 0.5rem;
+}
+
+
 #code{
     padding-top: 0;
     padding-left: 0;
 }
 
+
+
 .wrapper{
     display: flex;
     padding: 1rem 1rem;
     gap: 1.5rem;
-    font-size: 1.125rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
 
+}
+
+.flex-container{
+    display: flex;
+    gap:2rem;
 }
 
 .line-nos{
-    color: #b2b2a2;
-    font-family: monospace;
+    /* color: #b2b2a2; */
     text-align: end;
 }
 
-.btn-wrapper{
-    text-align: center;
-
-
-}
 
 .logo{
     display: block;
-    /* color: #21b9be; */
-    color: #e0e1e4;
+    color: #116A7B;
+    
     font-family: "Libre Caslon Text", serif;
     font-size: 2rem;
     text-decoration: none;
     margin-top: 1rem;
-    
+    margin-bottom: 1rem;
+    text-align: center;
     text-shadow: 1px 0 10px #FFD700; 
    
+}
+
+.dark .logo{
+    color: #e0e1e4;
 }
 
 .buttons{
     display: flex;
     justify-content: left;
     font-family: "Poppins", sans-serif;
+    text-align: center;
     font-size: 1rem;
     gap:1rem;
     margin-left: 2rem;
@@ -83,7 +110,7 @@ code{
 .btn{
     cursor: pointer;
     border: none;
-    color: #f8f8f2;
+    /* color: #f8f8f2; */
     width: 54px;
     background: transparent;
     border-radius: 0.55rem ;
@@ -98,20 +125,52 @@ code{
 }
 
 .save{
-    background-color: #3ccadd;
+    /* background-color: #03c03c; */
+    backdrop-filter: brightness(85%);
     font-size: 1rem;
     width: 70px;
+    height: 2rem;
+    margin: auto;
+    
+}
+
+.dark .save{
+    backdrop-filter: brightness(300%);
+    /* background-color: #3cbc66; */
+    /* color: #ffffff; */
 }
 
 .new{
-    background-color: #35cb8c;
+    /* background-color: #bfbf00; */
+    background : transparent;
+    backdrop-filter: brightness(85%);
+    margin: auto;
+}
+
+.dark .new{
+    backdrop-filter: brightness(300%);
+    /* background-color: #c0ab13; */
+    /* color: #fff; */
+
 }
 
 button:disabled{
-    opacity: 0.5;
+    opacity: 0.65;
 }
 
 button:hover:disabled{
     transform: none;
     box-shadow: none;
 }
+
+/* .themebtn{
+    background: transparent;
+    backdrop-filter: brightness(85%);
+}
+
+.dark .themebtn{
+    background: transparent;
+    backdrop-filter: brightness(300%);
+} */
+
+
